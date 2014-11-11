@@ -9,6 +9,7 @@ With the Dockerfile on repository you've a docker neo4j community edition image 
 
 1. Execute this command:
 
-	`docker run -i -t -d --name neo4j --privileged -p 7474:7474 tpires/neo4j`
+	`docker run -d --name neo4j -p 7474:7474 dgchurchill/neo4j`
 
-2. Access to http://localhost:7474 with your browser.
+2. Access http://dockerip:7474/ with your browser.
+
