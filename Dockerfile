@@ -19,7 +19,9 @@ RUN wget -O - http://debian.neo4j.org/neotechnology.gpg.key | apt-key add - && \
 ADD launch.sh /
 RUN chmod +x /launch.sh && \
     apt-get clean && \
-    echo "remote_shell_host=0.0.0.0" >> /var/lib/neo4j/conf/neo4j.properties
+    echo "remote_shell_host=0.0.0.0" >> /var/lib/neo4j/conf/neo4j.properties && \
+    echo "execution_guard_enabled=true" >> /var/lib/neo4j/conf/neo4j.properties && \
+    echo "org.neo4j.server.webserver.limit.executiontime=30000" >> /var/lib/neo4j/conf/neo4j-server.properties
 
 VOLUME /var/lib/neo4j/data
 
