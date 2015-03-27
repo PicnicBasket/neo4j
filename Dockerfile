@@ -1,7 +1,7 @@
 ## Neo4J dependency: dockerfile/java
 ## get java from trusted build
 FROM dockerfile/java
-MAINTAINER Dave Churchill
+MAINTAINER Picnic Software
 
 ## install neo4j according to http://www.neo4j.org/download/linux
 # Import neo4j signing key
@@ -21,6 +21,7 @@ RUN chmod +x /launch.sh && \
     apt-get clean && \
     echo "remote_shell_host=0.0.0.0" >> /var/lib/neo4j/conf/neo4j.properties && \
     echo "execution_guard_enabled=true" >> /var/lib/neo4j/conf/neo4j.properties && \
+    echo "dbms.security.auth_enabled=false" >> /var/lib/neo4j/conf/neo4j.properties && \
     echo "org.neo4j.server.webserver.limit.executiontime=30000" >> /var/lib/neo4j/conf/neo4j-server.properties
 
 VOLUME /var/lib/neo4j/data
