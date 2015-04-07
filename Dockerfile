@@ -21,9 +21,7 @@ RUN chmod +x /launch.sh && \
     apt-get clean && \
     echo "remote_shell_host=0.0.0.0" >> /var/lib/neo4j/conf/neo4j.properties && \
     echo "execution_guard_enabled=true" >> /var/lib/neo4j/conf/neo4j.properties && \
-    echo "dbms.cypher.planner=RULE" >> /var/lib/neo4j/conf/neo4j.properties && \
-    echo "org.neo4j.server.webserver.limit.executiontime=30000" >> /var/lib/neo4j/conf/neo4j-server.properties && \
-    echo "dbms.security.auth_enabled=false" >> /var/lib/neo4j/conf/neo4j-server.properties
+    echo "org.neo4j.server.webserver.limit.executiontime=30000" >> /var/lib/neo4j/conf/neo4j-server.properties
 
 VOLUME /var/lib/neo4j/data
 
