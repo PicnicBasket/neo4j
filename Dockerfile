@@ -1,6 +1,4 @@
-## Neo4J dependency: dockerfile/java
-## get java from trusted build
-FROM dockerfile/java
+FROM java
 MAINTAINER Picnic Software
 
 ## install neo4j according to http://www.neo4j.org/download/linux
