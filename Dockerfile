@@ -21,7 +21,9 @@ RUN chmod +x /launch.sh && \
     echo "execution_guard_enabled=true" >> /var/lib/neo4j/conf/neo4j.properties && \
     echo "dbms.cypher.planner=RULE" >> /var/lib/neo4j/conf/neo4j.properties && \
     echo "dbms.security.auth_enabled=false" >> /var/lib/neo4j/conf/neo4j-server.properties && \
-    echo "org.neo4j.server.webserver.limit.executiontime=30000" >> /var/lib/neo4j/conf/neo4j-server.properties
+    echo "org.neo4j.server.webserver.limit.executiontime=30000" >> /var/lib/neo4j/conf/neo4j-server.properties && \
+    echo "wrapper.java.initmemory=2048" >> /var/lib/neo4j/conf/neo4j-wrapper.conf && \
+    echo "wrapper.java.maxmemory=2048" >> /var/lib/neo4j/conf/neo4j-wrapper.conf
 
 VOLUME /var/lib/neo4j/data
 
